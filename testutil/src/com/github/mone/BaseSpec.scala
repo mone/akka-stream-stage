@@ -1,5 +1,12 @@
 package com.github.mone
 
-import org.scalatest.{FlatSpec, Matchers, TryValues}
+import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
+import akka.testkit.TestKit
+import org.scalatest.{FlatSpecLike, Matchers, TryValues}
 
-trait BaseSpec extends FlatSpec with Matchers with TryValues
+trait BaseSpec extends FlatSpecLike with Matchers with TryValues
+
+abstract class BaseStreamSpec extends TestKit(ActorSystem()) with BaseSpec {
+  implicit val materializer: ActorMaterializer = ActorMaterializer()
+}

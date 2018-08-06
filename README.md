@@ -14,11 +14,11 @@ in the project folder (YMMV)
 
 ## Test
 
-`mill all core.test cli.test`
+`mill all batchby.test`
 
 or, to keep testing as the code changes,
 
-`mill --watch all core.test cli.test`
+`mill --watch all batchby.test`
 
 ### TODO
 
@@ -26,8 +26,4 @@ Need to find out how to integrate `scoverage` with `mill`
 
 ## Build
 
-`mill cli.assembly`
-
-## Run
-
-`mill cli.run`
+`mill batchby.assembly`
